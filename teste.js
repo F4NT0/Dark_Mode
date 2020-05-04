@@ -1,24 +1,24 @@
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const currentTheme = localStorage.getItem('theme');
+function toggleTheme() {
+    const htmlTag = document.getElementsByTagName('html')[0]
+    if (htmlTag.hasAttribute('data-theme')) {
+      htmlTag.removeAttribute('data-theme')
+      return window.localStorage.removeItem('site-theme')
+    }
 
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-  
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
+    htmlTag.setAttribute('data-theme', 'dark')
+    window.localStorage.setItem('site-theme', 'dark')
+  }
+
+  function applyInitialTheme() {
+    const theme = window.localStorage.getItem('site-theme')
+    if (theme !== null) {
+      const htmlTag = document.getElementsByTagName('html')[0]
+      htmlTag.setAttribute('data-theme', theme)
     }
 }
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {        document.documentElement.setAttribute('data-theme', 'light');
-          localStorage.setItem('theme', 'light');
-    }    
-}
+applyInitialTheme()
 
-toggleSwitch.addEventListener('change', switchTheme, false);
-
-                                                                                                                                                                                                                                    
+document
+.getElementById('theme-toggle')
+.addEventListener('click', toggleTheme)

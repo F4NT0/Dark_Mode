@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="teste.scss">
+    <link rel="stylesheet" href="teste.css">
+    <script src="teste.js"></script>
 </head>
 <body>
-    <script src="teste.js"></script>
-     <!-- Botão de Dark Mode -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox"/>
-        <div class="slider round"></div>
-        </label>
-        <em>Dark Mode</em>
-    </div>
-
+     
+    <!-- <span data-theme="comic" id="theme-toggle" class="theme-toggle"></span> -->
+    <button data-theme="dark" class="theme-toggle" type="button" id="theme-toggle" onclick="toggleTheme()">Clique Aqui</button>
     <!-- Arquivo -->
     <h1>TESTE</h1>
 </body>

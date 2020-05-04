@@ -1,0 +1,42 @@
+/* Root Values */
+:root{
+    --bg-color: beige;
+    --font-color: black;
+    --primary-color: #ffa500;
+    --secondary-color: #6666ff;
+    --button-ok-collor: #4ca64c;
+  
+}
+  /* Dark Theme */
+html[data-theme="dark"]{
+    --bg-color: #121212;
+    --font-color: white;
+    --primary-color: green;
+    --secondary-color: #ffa500;
+    --button-ok-collor: #4ca64c;
+}
+
+html{
+    background: var(--bg-color);
+    color: var(--font-color);
+}
+
+h1{
+    color: var(--primary-color);
+}
+
+button{
+  color: var(--secondary-color);
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background: var(--global-theme-toggle-content);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
